@@ -1,10 +1,10 @@
 \section*{Design Objective}
-The objective of this project was to design and analyze a biquad low-pass digital filter. The filter is an IIR filter that is represented by Equation \ref{eq:filter}.
+The objective of this project was to design and analyze a biquad low-pass digital filter. The filter is an IIR filter that can be represented by:
 
 \begin{equation}
 y[n] = -0.1372*x[n-3] + 0.6249*y[n-1] - 0.2667*y[n-2]
 \end{equation}
-\label{eq:filter}
+\label{eq:filteq}
 
 The filter input, output and coefficients are 8-bit fixed-point two's complement numbers. All numbers are normalized so that each falls within the range of -1 to +1. The 8-bit two's complement representations of the filter coefficients are shown in Table \ref{tab:filtcoeff}.
 
