@@ -1,4 +1,14 @@
 \documentclass[]{report}
+
+\pdfpagewidth 8.5in
+\pdfpageheight 11in
+
+\setlength\topmargin{0in}
+\setlength\textwidth{6.5in}
+\setlength\oddsidemargin{0in}
+\setlength\evensidemargin{0in}
+
+
 \title{ECE 428 Final Project}
 \author{Nick Hamann \and Matthew Morgan}
 \date{May 4, 2009}
@@ -21,14 +31,13 @@
 \begin{document}
 \maketitle
 \include{designobj}
-\include{first_design}
-\include{second_design}
-\include{third_design}
-\include{fourth_design}
+\include{designconsid}
+\include{designdetails}
 \include{conclusion}
 
 % Verilog code
+\begin{appendix}
 \include{code_listing}
-\fancyfoot[R]{}
+\end{appendix}
 
 \end{document}

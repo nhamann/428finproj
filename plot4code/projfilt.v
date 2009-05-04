@@ -22,14 +22,13 @@ mult8 b1mult(y, b1, m2, clk, reset);
 reg8 reg1(y, clk, reset, d1);
 mult8 b2mult(d1, b2, m3, clk, reset);
 
+add16 add1(m1, m3, 1'b0, ad1, cout1);
+add16 add2(ad1, m2, 1'b0, ad2, cout2);
 
-add2_16 add1(m1, m3, 1'b0, ad1, cout1);
-add2_16 add2(ad1, m2, 1'b0, ad2, cout2);
-
+// Rounding truncation
 xor xor1(s1, ad2[15], ad2[7]);
-add2_8 add3(ad2[15:8], {7'b0, s1}, 1'b0, ad3, cout3);
+add8 add3(ad2[15:8], {7'b0, s1}, 1'b0, ad3, cout3);
 
-// Dropped bit truncation
 always @ (posedge clk)
 begin
 	if(reset == 1'b1)

@@ -1,0 +1,28 @@
+\section*{Design Objective}
+The objective of this project was to design and analyze a biquad low-pass digital filter. The filter is an IIR filter that is represented by Equation \ref{eq:filter}.
+
+\begin{equation}
+y[n] = -0.1372*x[n-3] + 0.6249*y[n-1] - 0.2667*y[n-2]
+\end{equation}
+\label{eq:filter}
+
+The filter input, output and coefficients are 8-bit fixed-point two's complement numbers. All numbers are normalized so that each falls within the range of -1 to +1. The 8-bit two's complement representations of the filter coefficients are shown in Table \ref{tab:filtcoeff}.
+
+\begin{table}[bh]
+\centering
+\begin{tabular}{c|c|c}
+Coefficient & Decimal & 2's Complement Hex \\
+\hline
+a1 & -0.1372 & EE \\
+\hline
+b1 & 0.6249 & 51 \\
+\hline
+b2 & -0.2667 & DE \\
+\end{tabular}  
+\caption{Filter Coefficient Representations}
+\label{tab:filtcoeff}
+\end{table}
+
+This report documents our approaches to designing the filter. The design was implemented in Verilog, with Model-Sim used to simulate the filter implementation and Xilinx used to analyze the performance of each filter design. Matlab was used to plot filter inputs and outputs.
+
+
