@@ -26,7 +26,7 @@ end\\*
 \\*
 endmodule\\*
 
-
+\newpage
 
 \subsection*{Third Design Timing Analysis}
 
@@ -47,7 +47,6 @@ Data Path Delay &   17.951  \\
 \end{table}
 
 According to Table \ref{tab:timing3}, the maximum clock frequency for the this design has been calculated to be approximately: 55.7 MHz. This result is troubling as the goal of this iteration is to reduce the critical path delay and effectively increase the operating clock frequency. In fact, this design has increased the delay. After investigating, it seems that the ripple carry adders in use are the critical path as this design does not use a register between the two sixteen bit adders; refer to Figure \ref{subfig:block3-a}. Again, the output waveform is largely ineffective in terms of filtering out high frequencies; refer to Figure \ref{subfig:block3-b} to review the results. 
-
 
 \begin{figure}[htp]
   \begin{center}
