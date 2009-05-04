@@ -6,7 +6,7 @@ The first design considered is a basic IIR filter with a critical delay path of 
 Take note that no reset signal is needed. This reseting is handled by modeling a weak pull-down in the registers. In the event that the input value is unknown or high impedence, the output value defaults to zero. This helps to reduce the port list and also internal routing required for this control signal. 
 \\*
 \lstset{language=verilog}
-\lstinputlisting[caption=Firt Iteration, label=lst:first_code]{projfilt.v}
+\lstinputlisting[caption=First Iteration, label=lst:first_code]{projfilt.v}
 \subsection*{Truncation Code}
 The code used in the first design to truncate the lower order bits simply only sends the higher order eight bits to the output.\\*
 \\*

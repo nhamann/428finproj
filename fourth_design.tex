@@ -44,3 +44,16 @@ According to Table \ref{tab:timing4}, the maximum clock frequency for the this d
   \caption{Second Design Results}
   \label{fig:design4_results}
 \end{figure}
+
+\subsection*{Final Verilog Code Iteration}
+As a recap, changes that lead to this final design include: rounding before truncation (Listing \ref{lst:filt_code}), pipelined multipliers (Listing \ref{lst:mult8_code}) to reduce path delay, and library based adders (Listing \ref{lst:adder16_code}) to reduce the high delay incurred by the ripple carry. The Matlab code was modified to print both the input and output simultaneously to hasten the simulation and testing process. Refer to Listing \ref{lst:plot_code} to review the changes to the Matlab code.
+\\*
+\lstset{language=verilog}
+\lstinputlisting[caption=Final Filter Module, label=lst:filt_code]{plot4code/projfilt.v}
+\lstinputlisting[caption=Sixteen Bit Adder, label=lst:adder16_code]{plot4code/add2_16.v}
+\lstinputlisting[caption=Eight Bit Truncation Adder, label=lst:adder8_code]{plot4code/add2_8.v}
+\lstinputlisting[caption=Eight Bit Multiplier, label=lst:mult8_code]{plot4code/mult8.v}
+\lstinputlisting[caption=Eight Bit Register, label=lst:reg8_code]{plot4code/reg8.v}
+\lstinputlisting[caption=Matlab Code, label=lst:test_code]{plot4code/filter_test.v}
+\lstset{language=matlab}
+\lstinputlisting[caption=Firt Iteration, label=lst:plot_code]{matlab/plot_filter.m}
