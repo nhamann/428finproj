@@ -1,9 +1,19 @@
 \section*{Fourth Design}
---Talk about basic design difference/advantages here-- 
+Hand calculations reveal that due to the negative and positive constant operands to the multipliers, it is impossible to cause an underflow or overflow condition to occur. The previous ripple carry adder module handled overflow/underflow, however, in an effort to reduce adder delay, the optimized Verilog library adder is used in this iteration of design. It is hoped that this design will allow the pipelined multipliers to be leveraged. 
+\subsection*{Final Verilog Code Iteration}
+Due to time constraints the design process ends with this code for the filter. 
 
 \subsection*{Using Optimized Adders}
---Show differing code here-- \\*
-
+module add2_16(a, b, cin, sum, cout);\\*
+  output reg [15:0] sum;\\*
+  output reg cout;\\*
+  input [15:0] a;\\*
+  input [15:0] b;\\*
+  input cin;\\*
+\\*
+  always @(a, b, cin)\\*
+    {cout, sum} = a + b + cin;\\*
+endmodule\\*
 
 
 \subsection*{Fourth Design Timing Analysis}
@@ -15,19 +25,16 @@
 \centering
            & Timing in (ns) \\
 \hline
-Minimum Period &     \\
+     Delay &   11.445  \\
 
-     Slack &     \\
+Requrement &    100.000 \\
 
-Requrement &        \\
-
-Data Path Delay &     \\
+Data Path Delay & 11.369  \\
 \end{tabular}  
 \label{tab:timing4}
 \end{table}
 
-According to Table \ref{tab:timing4}, the maximum clock frequency for the this design has been calculated to be approximately:  MHz
-
+According to Table \ref{tab:timing4}, the maximum clock frequency for the this design has been calculated to be approximately: 87.4 MHz. This result proves that using the optimized library adder greatly reduces the critical path delay and increases clock frequency by over a third. Refer to Figure \ref{subfig:output4-b} to review the filter output. The block diagram for this design is the same as the third iteration, but is included for consistency. 
 
 \begin{figure}[htp]
   \begin{center}
